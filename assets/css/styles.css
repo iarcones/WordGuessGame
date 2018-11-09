@@ -1,0 +1,36 @@
+body {
+    background-image: url("../images/bg.jpg");
+    background-repeat: repeat;
+}
+
+
+h1 {
+    color: blueviolet;
+}
+
+h1{
+    margin-top: 125px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+h2 {
+    background-color: grey;
+    text-align: center; 
+    height: 70px;
+    padding: 10px;
+    margin: 20px auto 20px auto;
+}
+
+#endgame {
+    color: blue;
+    background-color: white;
+}
+
+#iderrors {
+    color: red;
+}
+
+#idFinal {
+    color: green;
+}
