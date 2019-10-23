@@ -6,7 +6,7 @@ body {
 
 h1 {
     color: blueviolet;
-    margin-top: 125px;
+
     text-align: center;
     padding-top: 15px;
 }
@@ -28,11 +28,11 @@ h5{
     text-align: center;
     color: green;
 }
-#endgame {
-    color: blue;
-    background-color: white;
-}
+.container{
+    margin: 10% auto;
+    padding-bottom: 50px;
 
+}
 #iderrors {
     color: red;
 }
