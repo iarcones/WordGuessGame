@@ -1,80 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Word Guess Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./assets/css/reset.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Word Guess Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
 
-<body>
-  <div class="container  bg-white"> 
+  <body>
+    <div class="container  bg-white">
       <h1>United States 50 most populated cities</h1>
-      <br>
-      
-      <div class="container">
 
-        <div class="row">
-            <div class="col-md-4 mr-10">
-              <h2>HINT</h2>
-              <img id="idimg" src=" " alt="img" style="width:100%">
-            </div>
+      <h5>Click any letter to begin...</h5>
 
-            <div class="col-md-4 mr-10">
-              <h2>PLAY :-)</h2>
-              <br>
-              <h3 id="idfirstWord"></h3>
-              <h3 id="idtheword"></h3>
-              <h3 id="idlettersFail"></h3>
-              <h3 id="idFinal"></h3>
-              <h3 id="iderrors"></h3>
-            </div>
+      <div class="row">
+        <div class="col-2 mr-10">
+          <h2>RESULTS</h2>
+          <div class="col">
+            <br>
+            <h3>Wins: <span id="wins">0</span></h3>
+            <h3>Losses: <span id="losses">0</span></h3>
+          </div>
+        </div>
+        <div class="col-4 mr-10">
+          <h2>HINT</h2>
+          <img id="idimg" src=" " alt="img" style="width:100%" />
+        </div>
 
-            <div class="col-md-4">
-                <h2>MISSES :-(</h2>
+        <div class="col-6 mr-10">
+          <h2>Word to Guess</h2>
+          <div id="play">
+            <!-- <h3 id="idfirstWord"></h3> -->
+            <div class="row">
+              <div class="col-8">
+                <h3 id="idtheword"></h3>
                 <br>
-                <h3 id="idFail"></h3>
-                <img id="idhangman" src=" " alt="img">
+                <h3 id="idlettersFail"></h3>
+                <h3 id="idFinal"></h3>
+                <h3 id="iderrors"></h3>
               </div>
-        </div> 
+              <div class="col-4">
+                <img id="idhangman" src=" " alt="img" />
+                <h3 id="idFail"></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      </div> 
-        <br>
-        <h2 id=endgame></h2>
-  </div>
-         
-
-
-  <!-- <div class="container"> 
-      <h1>United States 50 more populated cities</h1>
-      <br>
-    
-      <h2 style=color:grey>HINT</h2>
-      <br>
-      <img id="idimg" src=" " alt="img">
-
-      <h2 id="idnumberWords"></h2>
-      <h2 id="idfirstWord"></h2>
-      <h2 id="idsecondWord"></h2>
-      <h2 id="idtheword"></h2>
-
-      <h2 id="idFail"></h2>
-      <h2 id="idlettersFail"></h2>
-
-      <h2 id="idFinal"></h2>
-      <h2 id="iderrors"></h2>
-
-  </div>  -->
-
- 
-
-
-  <script src="./assets/javascript/game.js"></script>
-
-
-</body>
-
+    <script src="./assets/javascript/game.js"></script>
+  </body>
 </html>

@@ -6,9 +6,6 @@ body {
 
 h1 {
     color: blueviolet;
-}
-
-h1{
     margin-top: 125px;
     text-align: center;
     padding-top: 15px;
@@ -20,8 +17,17 @@ h2 {
     height: 70px;
     padding: 10px;
     margin: 20px auto 20px auto;
+    color:white;
 }
 
+h3{
+font-size: 20px;
+}
+
+h5{
+    text-align: center;
+    color: green;
+}
 #endgame {
     color: blue;
     background-color: white;
@@ -33,4 +39,22 @@ h2 {
 
 #idFinal {
     color: green;
+}
+#idFail{
+    text-align: center;
+    color: red;
+}
+
+#idimg{
+    width: 150px;
+    height: 200px;
+}
+
+#idtheword{
+    margin-top: 10px;
+    color:blue;
+    font-size: 50px;
+}
+#play{
+    align-content: center;
 }
