@@ -91,15 +91,14 @@ var losses = 0;
 
 function reset() {
   city = cities[Math.floor(Math.random() * cities.length)];
-  console.log(city);
-
+  
   lCity = city.toLowerCase();
   attempts = 6;
   lettersFail = "";
   word = "";
 
   var img = "./assets/images/" + city.split(" ").join("") + ".jpg";
-  console.log(img);
+
   document.getElementById("idimg").src = img;
 
   var hangmanImgPath = "./assets/images/Hangman-0.png";
@@ -132,7 +131,7 @@ function updateFail() {
 }
 
 function checkletters(userInput) {
-  console.log("-->", userInput, lCity);
+
 
   if (lCity.includes(userInput)) {
     var wordTemp = "";
@@ -144,7 +143,7 @@ function checkletters(userInput) {
       }
     }
     word = wordTemp;
-    console.log("-->", wordTemp);
+
     if (!word.includes("-")) {
       document.querySelector("#idFinal").innerHTML =
         "Congrats you won!. Game Over!. Try again";
@@ -172,7 +171,7 @@ function checkletters(userInput) {
 }
 
 document.onkeyup = function(event) {
-  console.log(event.key);
+  
   var userInput = event.key.toLowerCase();
   document.querySelector("#iderrors").innerHTML = "";
 
