@@ -91,7 +91,7 @@ var losses = 0;
 
 function reset() {
   city = cities[Math.floor(Math.random() * cities.length)];
-  
+console.log(city)
   lCity = city.toLowerCase();
   attempts = 6;
   lettersFail = "";
@@ -131,8 +131,6 @@ function updateFail() {
 }
 
 function checkletters(userInput) {
-
-
   if (lCity.includes(userInput)) {
     var wordTemp = "";
     for (var i = 0; i < lCity.length; i++) {
@@ -144,44 +142,48 @@ function checkletters(userInput) {
     }
     word = wordTemp;
 
+    document.querySelector("#idtheword").innerHTML = word;
+
     if (!word.includes("-")) {
       document.querySelector("#idFinal").innerHTML =
-        "Congrats you won!. Game Over!. Try again";
+        "Congrats you won!. Try again";
       wins++;
-
+      attempts = 0
+      document.querySelector("#idtheword").innerHTML = "<strong><font color='blue'>" + city + "</font></strong>";
       document.querySelector("#wins").innerHTML = wins;
-      setTimeout(reset, 4000);
+      setTimeout(reset, 5000);
     }
   } else {
     attempts--;
     lettersFail += userInput;
     updateFail();
   }
-
+ 
   if (attempts === 0) {
     document.querySelector("#idFinal").innerHTML =
-      ":-( You lost. Game Over!. Try again";
+      ":-( You lost.Try again";
     losses++;
-
+    document.querySelector("#idtheword").innerHTML = "<strong><font color='red'>" + city + "</font></strong>";
     document.querySelector("#losses").textContent = losses;
-    setTimeout(reset, 4000);
+    setTimeout(reset, 5000);
   }
 
-  document.querySelector("#idtheword").innerHTML = word;
+ 
 }
 
 document.onkeyup = function(event) {
-  
-  var userInput = event.key.toLowerCase();
-  document.querySelector("#iderrors").innerHTML = "";
+  if (attempts > 0) {
+    var userInput = event.key.toLowerCase();
+    document.querySelector("#iderrors").innerHTML = "";
 
-  if (alphabet.indexOf(userInput) === -1) {
-    document.querySelector("#iderrors").innerHTML = "It's not a letter";
-  } else {
-    if (!word.includes(userInput) && !lettersFail.includes(userInput)) {
-      checkletters(userInput);
+    if (alphabet.indexOf(userInput) === -1) {
+      document.querySelector("#iderrors").innerHTML = "It's not a letter";
     } else {
-      document.querySelector("#iderrors").innerHTML = "Key repeated";
+      if (!word.includes(userInput) && !lettersFail.includes(userInput)) {
+        checkletters(userInput);
+      } else {
+        document.querySelector("#iderrors").innerHTML = "Key repeated";
+      }
     }
   }
 };
