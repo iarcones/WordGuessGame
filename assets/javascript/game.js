@@ -91,7 +91,7 @@ var losses = 0;
 
 function reset() {
   city = cities[Math.floor(Math.random() * cities.length)];
-
+  console.log(city);
   lCity = city.toLowerCase();
   attempts = 6;
   lettersFail = "";
@@ -128,6 +128,15 @@ function updateFail() {
   var hangmanImgPath = "./assets/images/Hangman-" + attempts + ".png";
   document.getElementById("idhangman").src = hangmanImgPath;
   document.getElementById("idhangman").innerHTML = hangmanImgPath;
+
+  if (attempts === 0) {
+    document.querySelector("#idFinal").innerHTML = ":-( You lost.Try again";
+    losses++;
+    document.querySelector("#idtheword").innerHTML =
+      "<strong><font color='red'>" + city + "</font></strong>";
+    document.querySelector("#losses").textContent = losses;
+    setTimeout(reset, 5000);
+  }
 }
 
 function checkletters(userInput) {
@@ -148,8 +157,9 @@ function checkletters(userInput) {
       document.querySelector("#idFinal").innerHTML =
         "Congrats you won!. Try again";
       wins++;
-      attempts = 0
-      document.querySelector("#idtheword").innerHTML = "<strong><font color='blue'>" + city + "</font></strong>";
+      attempts = 0;
+      document.querySelector("#idtheword").innerHTML =
+        "<strong><font color='blue'>" + city + "</font></strong>";
       document.querySelector("#wins").innerHTML = wins;
       setTimeout(reset, 5000);
     }
@@ -158,17 +168,6 @@ function checkletters(userInput) {
     lettersFail += userInput;
     updateFail();
   }
- 
-  if (attempts === 0) {
-    document.querySelector("#idFinal").innerHTML =
-      ":-( You lost.Try again";
-    losses++;
-    document.querySelector("#idtheword").innerHTML = "<strong><font color='red'>" + city + "</font></strong>";
-    document.querySelector("#losses").textContent = losses;
-    setTimeout(reset, 5000);
-  }
-
- 
 }
 
 document.onkeyup = function(event) {
