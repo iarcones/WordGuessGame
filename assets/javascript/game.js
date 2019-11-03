@@ -91,7 +91,7 @@ var losses = 0;
 
 function reset() {
   city = cities[Math.floor(Math.random() * cities.length)];
-  console.log(city);
+
   lCity = city.toLowerCase();
   attempts = 6;
   lettersFail = "";
